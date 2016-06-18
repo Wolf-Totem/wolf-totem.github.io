@@ -26,7 +26,7 @@
         <div id="code">
             <span class="comments">/**</span><br/>
             <span class="space"/><span class="comments">*2008—03-08,</span><br/>
-            <span class="space"/><span class="comments">*2016-01-29.</span><br/>
+            <span class="space"/><span class="comments" id="today">*2016-01-29.</span><br/>
             <span class="space"/><span class="comments">*/</span><br/>
             Boy name = <span class="keyword">Mr</span> WANG<br/>
             Girl name = <span class="keyword">Mrs</span> MA<br/>
@@ -77,6 +77,11 @@
     together.setMinutes(0);
     together.setSeconds(0);
     together.setMilliseconds(0);
+
+    var time = Date.parse(Date());
+    var currDate = new Date(time);
+    currDate.toLocaleDateString(); // 2014年8月7日 下午7:00:14
+    $("#today").text("*"+currDate.toLocaleDateString().replace('/', '-').replace('/', '-')+",");
 
     if (!document.createElement('canvas').getContext) {
         var msg = document.createElement("div");
